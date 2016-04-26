@@ -1,0 +1,50 @@
+/***
+ * 设计
+ * 1.软件的技术选型 React制作组件，
+ *   通过swiper实现轮播效果，animation.css
+ *   css3动画，jquery
+ *   
+ * 2.目录结构
+ ---------index.html
+   -------css 存放css结构
+   -------img 存放静态图片(logo,按钮,菜单选项背景)
+   -------js  存放react组件和其他js
+   -------doc 存放文档说明
+ 
+ 
+ * 3.确定模块和模块管理(如何做？)
+ *   1.确定模块----->公共的模块（单独抽取出来） 和 独特模块(放在特定的需求/组件中嵌套)
+ *   实现第一页加载首页组件
+     点击第二页时候 ，卸载第一页的组件，载入第二页组件
+     
+      
+     首先确定 首页layout不同于第二页的layout
+     实现首页的时候，将首页中的组件全部嵌入在首页的layout component中
+     点击切换的时候，将分类页的组件嵌套在第二页的layout中
+     总结:
+     实现思路:1.在点击不同的选项的时候，通过jsx动态创建不同的layout，在将组件嵌入到layout中
+     
+     <div>
+	     <div>
+	       <header>头部</header>
+	       <wrap>搜索框</wrap>
+	       <section>banner</section>
+	       <menu>列表</menu>
+	      </div> 
+	       <footer>底部</footer>
+	     </div>
+     <!--分类-->
+     <div>
+       <div>
+	       <header>头部</header>
+	       <wrap>搜索框</wrap>
+	       <menu>分类列表</menu>
+       </div>
+       
+       <footer>底部</footer>
+     </div>
+     
+ *
+ * 4.性能考虑和优化
+ *
+ */
